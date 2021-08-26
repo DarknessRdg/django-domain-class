@@ -8,7 +8,7 @@ class AbstractRepository(object):
     def delete(self, domain):
         return self.model_class.from_domain(domain).delete()
 
-    def update(self, domain):
+    def save(self, domain):
         return self.model_class.from_domain(domain).save()
 
     def all(self):
