@@ -27,7 +27,7 @@ class UserRepository(AbstractRepository):
         return self.filter(password__isnull=True)
 
     def with_name(self, name: str):
-        return self.filter(name=name)
+        return self.filter(complete_name=name)
 
     def exists_on_old_database(self, domain):
         return self.using(app.models.LegacyUser).filter(domain.to_model())
